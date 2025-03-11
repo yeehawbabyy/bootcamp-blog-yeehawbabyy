@@ -1,1 +1,2 @@
-# bootcamp-blog
+# Bootcamp blog
+
