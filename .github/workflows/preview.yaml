@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
-        run: npm i vercel
+        run: npm i -g vercel
       - name: Set Environment Variables
         run: |
             echo ${{ secrets.OAUTH_GITHUB_ID }} | vercel env add GITHUB_ID preview --token=${{ secrets.VERCEL_TOKEN }}
