@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import Layout from '../components/Layout';
 import Post, { PostProps } from '../components/Post';
 import prisma from '../lib/prisma';
-import { authOptions } from "./api/auth/[...nextauth]";
+import { authOptions } from "./apis/auth/[...nextauth]";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getServerSession(req, res, authOptions);

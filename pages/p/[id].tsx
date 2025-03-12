@@ -24,14 +24,14 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 };
 
 async function publishPost(id: string): Promise<void> {
-  await fetch(`/api/publish/${id}`, {
+  await fetch(`/apis/publish/${id}`, {
     method: 'PUT',
   });
   await Router.push('/');
 }
 
 async function deletePost(id: string): Promise<void> {
-  await fetch(`/api/post/${id}`, {
+  await fetch(`/apis/post/${id}`, {
     method: 'DELETE',
   });
   Router.push('/');
