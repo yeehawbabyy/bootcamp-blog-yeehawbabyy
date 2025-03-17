@@ -14,6 +14,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     return { props: { drafts: [] } };
   }
 
+  if (process.env.DISABLE_DB_CONNECTION === 'true') {
+    return { props: { drafts: [] } };
+  }
   const drafts = await prisma.post.findMany({
     where: {
       author: { email: session.user.email },

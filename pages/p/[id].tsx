@@ -8,6 +8,9 @@ import { useSession } from 'next-auth/react';
 import prisma from '../../lib/prisma';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  if (process.env.DISABLE_DB_CONNECTION === 'true') {
+    return { props: { post: [] } };
+  }
   const post = await prisma.post.findUnique({
     where: {
       id: String(params?.id),

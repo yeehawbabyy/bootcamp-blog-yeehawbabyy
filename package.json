@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next",
     "build": "prisma generate && next build",
+    "only_build": "next build",
     "start": "next start"
   },
   "keywords": [],

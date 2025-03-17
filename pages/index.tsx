@@ -5,6 +5,9 @@ import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 
 export const getStaticProps: GetStaticProps = async () => {
+  if (process.env.DISABLE_DB_CONNECTION === 'true') {
+    return { props: { feed: [] } };
+  }
   const feed = await prisma.post.findMany({
     where: { published: true },
     include: {
