@@ -6,6 +6,7 @@ services:
       POSTGRES_DB: bootcam_blog_db
       POSTGRES_USER: bootcam_user
       POSTGRES_PASSWORD: password123
+      NODE_ENV: development
     ports:
       - "5432:5432"
     volumes:
