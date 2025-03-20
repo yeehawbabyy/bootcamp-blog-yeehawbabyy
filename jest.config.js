@@ -8,8 +8,5 @@ module.exports = {
     }]
   },
   testMatch: ['**/*.test.ts'],
-  moduleDirectories: ['node_modules', '<rootDir>'],
-  collectCoverage: true,
-  coverageDirectory: 'coverage',
-  coverageReporters: ['lcov', 'text']
+  moduleDirectories: ['node_modules', '<rootDir>']
 };
